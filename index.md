@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+---
+layout: default 
+---
+* 简介：
 
-You can use the [editor on GitHub](https://github.com/Hack3rHan/Hack3rHan.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+  Hack3rHan，一个Web安全爱好者，专注安全攻防研究。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+  这里是Hack3rHan的Blog，主要用于记录平时积累的知识和遇到的各种小问题。
+  
+  
+* 联系方式：
 
-### Markdown
+  E-mail：Hack3rHan@protonmail.com
+  
+* 文章列表：
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+  [【资产识别】初探常见网络打印协议的识别 ](./docs/2021-4-14-print-protocol-recognition.md)
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Hack3rHan/Hack3rHan.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+  [【问题记录】requests ChunkedEncodingError IncompleteRead问题的阳间解决方案 ](./docs/2020-12-23-requests-exceptions.md)
