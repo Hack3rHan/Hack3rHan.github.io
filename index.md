@@ -13,6 +13,8 @@ layout: default
   
 * 文章列表：
 
+  [【经验分享】Cobalt Strike隐藏技术实践](./docs/2021-7-21-c2-hidden-tech.md)
+
   [【经验分享】少量隐私保护技巧和渠道（适用Red Team和日常生活）](./docs/2021-7-21-red-team-privacy-misc.md)
 
   [【资产识别】初探常见网络打印协议的识别 ](./docs/2021-4-14-print-protocol-recognition.md)
