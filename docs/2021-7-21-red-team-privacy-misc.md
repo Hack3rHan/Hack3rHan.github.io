@@ -37,6 +37,16 @@
 2. Telegram、Signal等。 （日常用）
 3. Wechat 欧盟区帐号。（日常使用）
 
+## 0x05 服务器 VPS
+
+1. Vultr 支持支付宝，有概率触发风控，按时间付费。
+2. DigitalOcean、Linode 按时间付费。
+3. Bithost、BitLaunch，支持加密货币。
+4. Sporestack 加密货币，免注册。
+5. VPSDime、BuyVM 风控好一点。
+
+
+
 
 
 
