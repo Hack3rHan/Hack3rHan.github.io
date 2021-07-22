@@ -4,7 +4,16 @@
 
 1. 更改teamserver的默认端口
 
-2. 设置iptables，阻止非预期访问。
+2. 关闭ICMP的回显（禁Ping）
+   ```bash
+   vim /etc/sysctl.conf
+   # echo net.ipv4.icmp_echo_ignore_all = 1 > /etc/sysctl.conf
+   sysctl -p
+   ```
+   
+   ![](..\img\2021-7-21-7.PNG)
+
+3. 设置iptables，阻止非预期访问。
 
    ```bash
    iptables -I INPUT -p tcp -s <HACKER_IP> --dport <TEAMSERVER_PORT> -j ACCEPT
@@ -14,9 +23,9 @@
    iptables -A INPUT -p tcp --dport <LISTENER_PORT> -j REJECT
    ```
 
-3. 启动teamserver
+4. 启动teamserver
 
-4. 为Redirector生成nginx.conf
+5. 为Redirector生成nginx.conf
 
    ```bash
    git clone https://github.com/threatexpress/cs2modrewrite.git
@@ -106,7 +115,11 @@
 
    ![](..\img\2021-7-21-5.PNG)
 
+5. 抓包验证一下，配置的子域名正常。
 
+   ![](..\img\2021-7-21-6.PNG)
+   
+   
 
 
 
