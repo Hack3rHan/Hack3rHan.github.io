@@ -1,6 +1,6 @@
 # Cobalt Strike隐藏技术实践
 
-## Team server
+## Teamserver
 
 1. 更改teamserver的默认端口
 
@@ -33,7 +33,7 @@
    python cs2nginx.py -i <CS_PROFILE> -c http://<TEAMSERVER_IP>:<TEAMSERVER_PORT}> -r https://www.google.com -H mydomain.local > nginx.conf
    ```
 
-## Redirector （Nginx转发）-> teamserver
+## Redirector (Nginx转发) -> teamserver
 
 1. 安装 nginx 和 **nginx-extras**
 
@@ -123,9 +123,58 @@
 
 
 
-## 其他手段正在不断尝试，边尝试边更新。
+## 使用Heroku等可反代的服务 -> Redirector -> teamserver
 
+之前直接用Github模板部署的方案已经被Heroku给ban了，下面的方法经测试仍可用，方案来自互联网。
 
+1. 注册一个Heroku帐号，邮箱就行。
 
+2. 安装heroku-cli，我是Arch Linux所以直接AUR就搞定了，其他发行版请依照官方手册。安装完成后登录。
 
+   注意：普通用户请用sudo，或直接切换到root操作。后面用到docker需要root权限，登录状态和当前用户有关。
 
+   cli登录时会调用浏览器，当然你也可以复制cli中的登录URL到浏览器中打开。
+
+   登录需要cli的IP和浏览器的IP匹配，这个地方需要自己想办法了，举个例子，两者用同一个Proxy。
+
+   ```bash
+   yay -S docker git
+   # AUR
+   yay -S heroku-cli
+   
+   sudo heroku login
+   ```
+
+3. Clone一下这个项目
+
+   ```bash
+   git clone https://github.com/rjoonas/heroku-docker-nginx-example.git
+   ```
+
+4. 修改default.conf.template，参考配置如下。注意，我这里的结构是heroku->nginx反代实现的redirector->teamserver，如果直接从heroku到teamserver，此处可写判断逻辑：
+
+   ```nginx
+   server {
+       listen $PORT;
+       location / {
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+           proxy_pass <Redirector地址>;
+       }
+   }
+   ```
+
+5. 生成、Push并发布，发布后如果需要改名，可以去heroku网页控制台操作。
+
+   ```bash
+   # su - root
+   heroku container:login
+   heroku create
+   heroku container:push web
+   heroku container:release web
+   ```
+
+6. Cobalt Strike那边配置和之前一样
+
+   ![](..\img\2021-7-21-8.PNG)
+
+7. 测试上线成功，功能正常，抓包看效果和上面Cloudflare Workers类似，不再贴图。
