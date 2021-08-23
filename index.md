@@ -3,15 +3,17 @@ layout: default
 ---
 * 简介：
 
-  Hack3rHan，一个Web安全爱好者，专注安全攻防研究。
+  Hack3rHan，一个从事安全研究的社畜，专注网络安全攻防技术研究（Red Team方向）。
 
-  这里是Hack3rHan的Blog，主要用于记录平时积累的知识和遇到的各种小问题。
+  这里是Hack3rHan的Blog，主要用于记录平时积累的各种知识和遇到的各种小问题。
   
 * 联系方式：
 
-  E-mail：i@010.moe
+  E-mail：Hack3rHan@protonmail.com
   
 * 文章列表：
+
+  [【经验分享】利用Tor进行C2隐藏的一些探索](./docs/2021-8-23-hidden-c2-by-tor.md)
 
   [【经验分享】Cobalt Strike隐藏技术实践](./docs/2021-7-21-c2-hidden-tech.md)
 
@@ -20,4 +22,3 @@ layout: default
   [【资产识别】初探常见网络打印协议的识别 ](./docs/2021-4-14-print-protocol-recognition.md)
 
   [【问题记录】requests ChunkedEncodingError IncompleteRead问题的阳间解决方案 ](./docs/2020-12-23-requests-exceptions.md)
-
